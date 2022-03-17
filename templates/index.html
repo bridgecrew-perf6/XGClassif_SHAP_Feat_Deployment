@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predict Churn Status</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('pred_testquery')}}"method="post">
+    	<input type="text" name="marital-status_ Married-civ-spouse" placeholder="marital_status_Married_civ_spouse" required="required" /><br>
+        <input type="text" name="capital_loss" placeholder="capital_loss" required="required" /><br>
+	    <input type="text" name="education_num" placeholder="education_num" required="required" /><br>
+        <input type="text" name="occupation_ Exec-managerial" placeholder="occupation_Exec_managerial" required="required" /><br>
+        <input type="text" name="capital_gain" placeholder="capital_gain" required="required" /><br>
+        <input type="text" name="age" placeholder="age" required="required" /><br>
+        <input type="text" name="hours_per_week" placeholder="hours_per_week" required="required" /><br>
+        <input type="text" name="sex_ Female" placeholder="Sex_Female" required="required" /><br>
+        <input type="text" name="relationship_ Own-child" placeholder="relationship_Own_child" required="required" /><br>
+        <input type="text" name="occupation_ Other-service" placeholder="occupation_Other_service" required="required" /><br>
+        <input type="text" name="occupation_ Prof-specialty" placeholder="occupation_Prof_specialty" required="required" /><br>
+        <input type="text" name="fnlwgt" placeholder="fnlwgt" required="required" /><br>
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
